@@ -1,0 +1,23 @@
+<p>component1 works!</p>
+
+<!-- set the value for below line -->
+<form action="" [formGroup]="userForm">
+  <input type="text" placeholder="FirstName" formControlName="firstName">
+  <input type="text" placeholder="LastName" formControlName="lastName">
+  <!-- select option to select if the user is a student or  professional -->
+  <select formControlName="userType">
+    <option value="student">Student</option>
+    <option value="professional">Professional</option>
+  </select>
+  <input type="text" placeholder="Address" formControlName="address">
+  <input type="text" placeholder="Age" formControlName="age">
+  <button (click)="passData()" [disabled]="!userForm.valid">Submit</button>
+  <button (click)="updateData()">Update</button>
+</form>
+<!-- <input type="text" placeholder="Address">
+<input type="number" placeholder="Age"> -->
+
+<!-- <input id="name" type="text" [formControl]="name">
+<p>Name: {{name.value}}</p> -->
+
+<h1>{{userForm.get("firstName")?.value}}</h1>
